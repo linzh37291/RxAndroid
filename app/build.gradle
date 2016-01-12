@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "com.lwl.ebuy"
+        minSdkVersion 15
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:20.0.0'
+    compile files('libs/adapter-rxjava-2.0.0-beta3.jar')
+    compile files('libs/converter-gson-2.0.0-beta3.jar')
+    compile files('libs/gson-2.5.jar')
+    compile files('libs/okhttp-3.0.0-RC1.jar')
+    compile files('libs/okio-1.6.0.jar')
+    compile files('libs/retrofit-2.0.0-beta3.jar')
+    compile files('libs/rxjava-1.1.0.jar')
+    compile project(':rxandroid-1.1.0')
+}
